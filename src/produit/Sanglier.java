@@ -12,6 +12,7 @@ public class Sanglier extends Produit {
 		this.chasseur = chasseur;
 	}
 
+	@Override
 	public String decrireProduit() {
 		return nom + " de " + poids + unite + " chasser par " + chasseur.getNom() + ".";
 	}

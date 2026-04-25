@@ -9,6 +9,7 @@ public class Poisson extends Produit {
 		this.datePeche = datePeche;
 	}
 
+	@Override
 	public String decrireProduit() {
 		return nom + " péchés le " + datePeche + ".";
 	}

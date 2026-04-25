@@ -3,7 +3,7 @@ package villageGaulois;
 import personnages.Gaulois;
 import produit.Produit;
 
-public class Etal<P extends Produit> implements IEtal<P> {
+public class Etal<P extends Produit> implements IEtal {
 	private Gaulois vendeur;
 	private P produit;
 	private int quantiteDebutMarche;
@@ -31,9 +31,9 @@ public class Etal<P extends Produit> implements IEtal<P> {
 	}
 
 	@Override
-	public void occuperEtal(Gaulois vendeur, P produit, int quantite) {
+	public void occuperEtal(Gaulois vendeur, Produit produit, int quantite) {
 		this.vendeur = vendeur;
-		this.produit = produit;
+		this.produit = (P) produit;
 		this.quantite = quantite;
 		quantiteDebutMarche = quantite;
 		etalOccupe = true;
@@ -64,7 +64,7 @@ public class Etal<P extends Produit> implements IEtal<P> {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return donneesVente est un tableau de chaine contenant [0] : un boolean
 	 *         indiquant si l'étal est occupé [1] : nom du vendeur [2] : produit
 	 *         vendu [2] : quantité de produit à vendre au début du marché [4] :
